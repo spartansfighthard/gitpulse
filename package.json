@@ -1,0 +1,79 @@
+{
+  "name": "gitpulse",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio",
+    "db:seed": "node -r esbuild-register prisma/seed.ts"
+  },
+  "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "resolutions": {
+    "@solana/web3.js": "1.87.6",
+    "rpc-websockets": "7.5.1"
+  },
+  "dependencies": {
+    "@prisma/client": "5.7.1",
+    "@radix-ui/react-slot": "1.0.2",
+    "@radix-ui/react-toast": "1.2.5",
+    "@solana/pay": "0.2.5",
+    "@solana/wallet-adapter-base": "0.9.23",
+    "@solana/wallet-adapter-react": "0.15.35",
+    "@solana/wallet-adapter-react-ui": "0.9.35",
+    "@solana/wallet-adapter-wallets": "0.19.32",
+    "@solana/web3.js": "1.87.6",
+    "@tanstack/react-query": "^5.66.0",
+    "@types/js-cookie": "^3.0.6",
+    "bignumber.js": "9.1.2",
+    "bs58": "5.0.0",
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "esbuild": "^0.24.2",
+    "esbuild-register": "^3.6.0",
+    "js-cookie": "^3.0.5",
+    "lucide-react": "0.330.0",
+    "nanoid": "^5.0.9",
+    "next": "14.0.4",
+    "pino-pretty": "13.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rpc-websockets": "7.5.1",
+    "sonner": "1.7.4",
+    "tailwind-merge": "2.6.0",
+    "ws": "8.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.19.3",
+    "@types/react": "18.2.42",
+    "@types/react-dom": "18.2.17",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.5.1",
+    "prisma": "5.7.1",
+    "tailwindcss": "3.4.17",
+    "typescript": "5.3.3"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "react",
+        "react-dom"
+      ]
+    },
+    "packageExtensions": {
+      "bs58@*": {
+        "peerDependencies": {
+          "buffer": "*"
+        }
+      }
+    }
+  }
+}

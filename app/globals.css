@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 213 31% 91%;
+
+    --card: 222 47% 15%;
+    --card-foreground: 213 31% 91%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --primary: 252 95% 67%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 170 100% 45%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 223 47% 20%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 252 95% 67%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 223 47% 20%;
+    --input: 223 47% 20%;
+    --ring: 252 95% 67%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 252 95% 67%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 170 100% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 252 95% 67%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 252 95% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent animate-gradient;
+}
+
+.hero-gradient {
+  background: radial-gradient(
+    circle at top center,
+    hsl(var(--primary) / 0.15) 0%,
+    transparent 70%
+  );
+}
+
+.features-gradient {
+  background: radial-gradient(
+    circle at bottom center,
+    hsl(var(--secondary) / 0.1) 0%,
+    transparent 50%
+  );
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:bg-card/60 hover:shadow-lg hover:shadow-primary/10;
+}
+
+.glow {
+  box-shadow: 0 0 50px -12px hsl(var(--primary) / 0.2);
+}
+
+.nav-link {
+  @apply text-muted-foreground hover:text-foreground transition-colors;
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Grid pattern background */
+.grid-pattern {
+  background-image: linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  animation: gradient 8s ease infinite;
+  background-size: 200% auto;
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.pulse-animation {
+  animation: beat 2s ease-in-out infinite;
+} 
